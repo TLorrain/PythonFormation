@@ -80,21 +80,53 @@ main()
 
 """ Not done Yet ! """
 
-"""
-def verbing(s):
-    out
-    if len(s) >=3:
-        else: pass
-    return output"""
 
+def verbing(s):
+    output =''
+    if len(s) <=3: 
+        output=s 
+    elif s[-3:]=='ing':    
+            output='%sly' %(s)
+    else:
+                output='%sing' %(s)
+    return output
+    
 #E Not_bad
 
-""" Not done Yet ! """
+def not_bad(s):
+    output=''
+    if s.find('bad')>s.find('not'):
+        output='%sgood%s' %(s[:s.find('not')],s[(s.find('bad')+3):])
+    else: output=s
+    return output
 
 #F front_back
 
-""" Not done Yet ! """
-
+def front_back(a, b):
+    Front_a=''
+    Front_b=''
+    Back_a=''
+    Back_b=''
+    Output=''
+    if len(a)%2==0:
+        Half_a=(len(a)/2)
+        Front_a = '%s' %(a[:Half_a]) 
+        Back_a = '%s' %(a[Half_a:]) 
+    else:
+        Half_a=(len(a)/2)+1
+        Front_a = '%s' %(a[:Half_a]) 
+        Back_a = '%s' %(a[Half_a:]) 
+    if len(b)%2==0:
+        Half_b=(len(b)/2)
+        Front_b = '%s' %(b[:Half_b]) 
+        Back_b = '%s' %(b[Half_b:]) 
+    else:
+        Half_b=(len(b)/2)+1
+        Front_b = '%s' %(b[:Half_b]) 
+        Back_b = '%s' %(b[Half_b:]) 
+    Output = Front_a+Front_b+Back_a+Back_b
+    return Output
+    
 #F' Verification of above functions
 def main():
     print 'verbing'
